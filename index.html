@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Oliveira Abrão — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f7f5f1; --card:#ffffff; --line:#e7e2d9;
+  --gold:#a8832e; --gold2:#8c6b1d; --text:#1c1a17; --muted:#6c655a;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.gold{color:var(--gold)}
+.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
+.rule{width:64px;height:1px;background:var(--gold);margin:22px 0}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+nav .logo{font-family:var(--serif);font-size:22px;letter-spacing:.14em}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+nav a:hover{color:var(--gold2)}
+
+/* HERO */
+.hero{padding:140px 0 120px;background:var(--bg)}
+.hero h1.nome{font-size:clamp(52px,9.2vw,132px);letter-spacing:-.02em;line-height:1;margin:0 0 28px}
+.hero p.lead{font-size:clamp(16px,1.8vw,20px);max-width:620px;color:var(--muted)}
+.hero .cta{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 30px;border:1px solid var(--gold);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;transition:.25s;cursor:pointer}
+.btn.fill{background:var(--gold);color:#fff}
+.btn.fill:hover{background:var(--gold2)}
+.btn:not(.fill):hover{background:rgba(201,162,75,.12)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:84px;border-top:1px solid var(--line)}
+.stat{padding:28px 0;border-right:1px solid var(--line);padding-left:28px}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-size:44px;font-weight:500;color:var(--gold2);line-height:1}
+.stat span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:110px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.head h2{font-size:clamp(38px,5vw,64px)}
+.head p{max-width:420px;color:var(--muted);font-size:15px}
+
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.about p{font-size:17px;color:#3a362f;margin-bottom:18px}
+.skills{list-style:none;border-top:1px solid var(--line)}
+.skills li{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.skills li i{font-style:normal;color:var(--gold)}
+
+/* CASES */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.grid.tall{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.case{background:var(--card);border:1px solid var(--line);transition:.3s;overflow:hidden}
+.case:hover{border-color:var(--gold);transform:translateY(-4px)}
+.case video,.case img{display:block;width:100%;background:#000;aspect-ratio:16/10;object-fit:contain}
+.case.v video{aspect-ratio:9/16;max-height:440px}
+.case.p video,.case.p img{aspect-ratio:4/5;max-height:400px}
+.case.w video{aspect-ratio:2944/1098}
+.case.l img{aspect-ratio:16/9}
+.case.t img{aspect-ratio:2/3}
+.grid{align-items:start}
+.grid.vid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(480px,1fr))}
+@media(max-width:560px){.grid.wide{grid-template-columns:1fr}}
+.case .body{padding:22px 24px 26px}
+.case .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.case h3{font-size:27px;margin:8px 0 8px}
+.case p{font-size:14px;color:var(--muted);line-height:1.65}
+.origin{margin-top:14px;font-size:11px;letter-spacing:.12em;color:#8a8275;text-transform:uppercase}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pillar{padding:34px 30px;border:1px solid var(--line);background:var(--card)}
+.pillar .n{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
+.pillar h3{font-size:28px;margin:14px 0 10px}
+.pillar p{font-size:14px;color:var(--muted)}
+
+.certs{display:flex;flex-wrap:wrap;gap:14px}
+.cert{padding:14px 26px;border:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+/* CONTACT */
+.contact{text-align:center;padding:130px 0}
+.contact h2{font-size:clamp(44px,7vw,92px);margin:20px 0}
+.contact h2 em{color:var(--gold2)}
+.contact .links{display:flex;justify-content:center;gap:16px;margin-top:38px;flex-wrap:wrap}
+footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;font-size:11px;letter-spacing:.24em;color:#8a8275;text-transform:uppercase}
+
+@media(max-width:860px){
+  nav ul{display:none}
+  .about,.pillars{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
+  section{padding:76px 0}.hero{padding:80px 0 64px}
+}
+
+/* GALERIA UNIFORME */
+.g{display:grid;gap:26px}
+.g.c3{grid-template-columns:repeat(3,1fr)}
+.g.c2{grid-template-columns:repeat(2,1fr)}
+.g.center{display:flex;flex-wrap:wrap;justify-content:center}
+.g.center .case{flex:0 0 calc((100% - 52px)/3)}
+.g .case{display:flex;flex-direction:column;transform:none}
+.g .case:hover{transform:none;border-color:var(--gold)}
+.frame{position:relative;width:100%;background:#000;overflow:hidden}
+.frame.f34{aspect-ratio:3/4}.frame.f219{aspect-ratio:21/9}.frame.f169{aspect-ratio:16/9}
+.frame video,.frame img{position:absolute;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;background:#000}
+.frame.cover img{object-fit:cover}
+.g .case .body{flex:1;display:flex;flex-direction:column;padding:20px 22px 22px}
+.g .case h3{font-size:25px;margin:6px 0 8px;line-height:1.15}
+.g .case p{font-size:13.5px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.g .case .origin{margin-top:auto;padding-top:12px}
+.head.sub{margin:96px 0 40px}
+.head.sub h2{margin-top:14px;font-size:clamp(32px,4vw,52px)}
+@media(max-width:860px){.g.c3{grid-template-columns:repeat(2,1fr)}.g.center .case{flex:0 0 calc((100% - 26px)/2)}}
+@media(max-width:560px){.g.c3,.g.c2{grid-template-columns:1fr}.g.center .case{flex:0 0 100%}}
+.pillar .n,.skills li i{display:none}
+.grp{margin:44px 0 16px}.grp:first-of-type{margin-top:0}
+
+/* AMPLIAR IMAGEM AO CLICAR */
+.frame img{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(18,16,12,.82);display:none;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer}
+
+/* DESTAQUE: EXTENSAO */
+.feature{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--gold);background:var(--card);margin-bottom:34px}
+.feature .frame{aspect-ratio:1920/942;min-height:0}
+.feature .ftext{padding:36px 38px}
+.feature .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.feature h3{font-size:34px;margin:10px 0 14px;line-height:1.1}
+.feature p{font-size:14.5px;line-height:1.7;color:var(--muted)}
+.feature ul{margin:16px 0 0 18px;font-size:14px;color:#3a362f;line-height:1.8}
+
+
+/* VIDEO AMPLIADO */
+.frame.hasvid{cursor:pointer}
+.frame.hasvid::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(10,9,8,.62) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/34px no-repeat;transition:transform .2s;pointer-events:none}
+.frame.hasvid:hover::after{transform:scale(1.08)}
+.lb video{display:none;max-width:100%;max-height:100%;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb.isvid video{display:block;height:100%;width:auto;max-width:100%}
+.lb.isvid img{display:none}
+.lb.isvid{cursor:default}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#topo" class="logo">R·A</a>
+  <ul>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#trafego">Tráfego</a></li>
+    <li><a href="#automacoes">Automações</a></li>
+    <li><a href="#videos">Vídeos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="topo"><div class="wrap">
+  <h1 class="nome">Rafael Oliveira Abrão</h1>
+  <p class="lead">Engenharia de IA aplicada a marketing: agentes, automação e conteúdo generativo.</p>
+</div></header>
+
+<section id="sobre"><div class="wrap about">
+  <div>
+    <span class="eyebrow">Sobre</span>
+    <h2 style="font-size:clamp(38px,5vw,60px);margin:16px 0 8px">Marketing com <em class="gold">engenharia</em></h2>
+    <div class="rule"></div>
+    <p>Construo sistemas de marketing e automação com IA: workflows agentic, integrações por API, pipelines de conteúdo generativo e dashboards de performance. Desenvolvo com vibe coding e Claude Code, e uso MCP (Model Context Protocol) para o Claude controlar ferramentas reais.</p>
+    <p>Freelancer em agentes de IA, n8n e tráfego pago (Meta Ads e Google Ads), em Uberlândia-MG e remoto. Orquestro em Python e TypeScript, com logs, tratamento de erro e monitoramento.</p>
+    <p>Tenho expertise em orquestração de agentes: um agente coordena outros, inclusive em máquinas diferentes, como o Claude delegando tarefas a modelos menores no RVbot e a outro Claude em outro PC. Conectei Figma, ClickUp e Google Ads ao Claude por MCP. É IA integrada ao fluxo de trabalho, não só automação, e acelera prazos para quem tem o conhecimento para conduzi-la.</p>
+  </div>
+  <ul class="skills">
+    <li>Vibe coding · Claude Code <i>01</i></li>
+    <li>Agentes de IA · MCP <i>02</i></li>
+    <li>Automação n8n · Python <i>03</i></li>
+    <li>Tráfego pago · CPA · CTR · ROAS <i>04</i></li>
+    <li>IA generativa · ComfyUI <i>05</i></li>
+  </ul>
+</div></section>
+
+<section id="trafego"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Tráfego pago</span><h2 style="margin-top:14px">Dados que <em class="gold">decidem</em></h2></div>
+    <p>Campanhas no Meta Ads e no Google Ads, acompanhadas por uma ferramenta que eu mesmo desenvolvi.</p>
+  </div>
+  <div class="about">
+    <div>
+      <h3 style="font-size:34px;margin-bottom:14px">Dashboard próprio de campanhas</h3>
+      <p>Dashboard próprio, integrado à Meta Marketing API, que consolida campanhas, anúncios e métricas de performance (como CPA, CTR e ROAS) em uma tela, com análise por IA via Claude API.</p>
+      <p>Em vez de abrir conta por conta no Gerenciador, vejo tudo junto e comparo o desempenho de cada anúncio. As métricas são automatizadas em planilhas do Google Sheets, direto do Drive, tudo integrado.</p>
+      <p>Como criei o sistema, ele é adaptável: pode se adequar ao fluxo de trabalho de qualquer empresa.</p>
+      <div class="origin">Desenvolvido por mim · Meta Marketing API · Claude API · Google Sheets · Drive · vibe coding</div>
+    </div>
+    <ul class="skills">
+      <li>Campanhas e anúncios <i>01</i></li>
+      <li>Métricas de performance <i>02</i></li>
+      <li>Meta Marketing API <i>03</i></li>
+      <li>Análise com Claude API <i>04</i></li>
+    </ul>
+  </div>
+  <div class="g c3 center" style="margin-top:44px">
+    <article class="case"><div class="frame f169 contain"><img src="campanhas-meta.png" alt="Campanha de leads no Meta Ads" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Campanha de leads na Meta</h3><p>Campanha de geração de leads na Meta com dois públicos em teste e objetivo de conversa no WhatsApp: 72 leads, acompanhada no painel próprio. Nomes e valores ocultos.</p><div class="origin">Meta Ads · Marketing API · painel próprio</div></div></article>
+    <article class="case"><div class="frame f169 contain"><img src="dashboard-agencia.png" alt="Dashboard de campanhas" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Dashboard de campanhas</h3><p>Painel próprio que reúne as contas, o gasto em campanhas da Meta, os alertas e o status de cada automação em uma tela. Nomes ocultos.</p><div class="origin">Meta Graph API · Python · Claude API</div></div></article>
+    <article class="case"><div class="frame f169 contain"><img src="google-ads.png" alt="Google Ads" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Google Ads</h3><p>Conta do Google Ads com a API ativada para consultar campanhas e relatórios por código. Nomes e IDs ocultos.</p><div class="origin">Google Ads API · OAuth</div></div></article>
+  </div>
+</div></section>
+
+<section class="alt" id="automacoes"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Automações com IA</span><h2 style="margin-top:14px">Menos trabalho <em class="gold">manual</em></h2></div>
+    <p>Fluxos e ferramentas que fazem sozinhos o que tomaria horas.</p>
+  </div>
+    <div class="feature">
+    <div class="frame f169 contain"><img src="extensao-google-ads.png" alt="Extensão RVbot ao lado do Google Ads" loading="lazy"></div>
+    <div class="ftext">
+      <span class="tag">Diferencial · criado por mim</span>
+      <h3>RVbot Extension: qualquer plataforma SaaS, por comando de voz</h3>
+      <p>Extensão de Chrome (Manifest V3) que opera o navegador por comando de voz. Não se limita ao Google Ads: executa tarefas em qualquer plataforma SaaS, como CRM, dashboards, redes sociais e painéis de anúncio, sem depender de API nem de integração pronta.</p>
+      <ul>
+        <li>Agente de IA que navega, clica e digita como uma pessoa</li>
+        <li>Memória, agenda e servidor MCP local</li>
+        <li>Roteador próprio entre LLMs locais (Ollama) e gratuitos</li>
+      </ul>
+      <div class="origin">Chrome Manifest V3 · MCP · Ollama · comando de voz</div>
+    </div>
+  </div>
+  <div class="g c2 center" style="margin-bottom:34px">
+    <article class="case" style="flex:0 0 100%"><div class="frame contain" style="aspect-ratio:1950/941"><img src="workflow-comfyui.png" alt="Workflow ComfyUI de vídeo com LTX 2.3" loading="lazy"></div><div class="body"><span class="tag">IA generativa</span><h3>Pipelines ComfyUI</h3><p>Workflows de IA generativa (LTX 2.3, InfiniteTalk, Qwen Image Edit) reprodutíveis, com processamento em lote e identidade de personagem travada. A imagem mostra a estrutura real do workflow de vídeo validado, com 46 nós.</p><div class="origin">ComfyUI · LTX 2.3 · InfiniteTalk · Qwen Image Edit</div></div></article>
+  </div>
+  <div class="g c2" style="margin-top:56px">
+    <article class="case"><div class="frame f169 contain"><img src="fluxo-postar-video-cliente.png" alt="Fluxo de postagem automática de vídeos" loading="lazy"></div>
+      <div class="body"><span class="tag">Cliente</span><h3>Postagem automática de vídeos</h3>
+      <p>Pipeline agentic de 24 nós integrado ao Google Sheets e ao Drive: lê a fila na planilha, baixa o vídeo do Drive, gera a legenda com IA e publica via Meta Graph API no Facebook, Instagram (Reels e Stories) e Threads. Webhooks, controle de erro e rotação automática de conteúdo.</p>
+      <div class="origin">n8n · Meta Graph API · Google Drive · LLM</div></div></article>
+    <article class="case"><div class="frame f169 contain"><img src="fluxo-financeiro-ema-cross-cliente.png" alt="Fluxo de estratégia EMA Cross" loading="lazy"></div>
+      <div class="body"><span class="tag">Cliente do mercado financeiro</span><h3>Estratégia de trading automatizada</h3>
+      <p>Roda no PC com MCP para o MetaTrader 5: busca o histórico, calcula o cruzamento de médias (EMA Cross) com backtest e dispara o alerta de compra pelo Telegram via webhook.</p>
+      <div class="origin">MetaTrader 5 · MCP · webhook · Telegram</div></div></article>
+  </div>
+  <div class="g c2" style="margin-top:26px">
+    <article class="case"><div class="frame f169 contain"><img src="fluxos-postagens.png" alt="Calendário de postagens" loading="lazy"></div><div class="body"><span class="tag">Automação</span><h3>Calendário de postagens</h3><p>Scripts Python agendados no Windows, um por fluxo, com log estruturado, calendário do que foi postado e do que está agendado, status de cada fluxo e alertas no Telegram. Mais estável e observável que n8n. Nomes ocultos.</p><div class="origin">Python · Agendador do Windows · logs</div></div></article>
+    <article class="case"><div class="frame f169 contain"><img src="crm-leads.png" alt="CRM operado pelo Claude" loading="lazy"></div><div class="body"><span class="tag">CRM próprio</span><h3>CRM operado pelo Claude</h3><p>CRM próprio desenvolvido por mim com vibe coding e Claude Code, com leads, contatos, oportunidades e tarefas, operado por um agente de IA e consultado e atualizado por API. Dados ocultos.</p><div class="origin">CRM · API · agente de IA</div></div></article>
+  </div>
+</div></section>
+
+<section id="videos"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Vídeos com IA</span><h2 style="margin-top:14px">Trabalhos em <em class="gold">movimento</em></h2></div>
+    <p>Personagens fixos, voz clonada e cenas geradas com IA, produzidos para clientes e projetos próprios.</p>
+  </div>
+  <div class="eyebrow grp">Personagens animados</div>
+  <div class="g c3 center">
+    <article class="case"><div class="frame f34 contain"><video src="Petinho-animacao-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Criação de personagens animados</h3><p>Workflow automatizado de postagens com consistência de personagem: voz clonada por TTS, animação por modelo de vídeo (LTX 2.3) e sincronia labial (InfiniteTalk), orquestrados em workflows de ComfyUI.</p><div class="origin">ComfyUI · LTX 2.3 · InfiniteTalk · TTS clonado</div></div></article>
+    <article class="case"><div class="frame f34 contain"><video src="criacao-influencer-comfyui.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Julinha com o produto</h3><p>Composição de imagem com o produto real do cliente, animada com InfiniteTalk (lip-sync) e identidade do personagem travada por imagem de referência.</p><div class="origin">ComfyUI · InfiniteTalk · TTS clonado</div></div></article>
+  </div>
+  <div class="eyebrow grp">Franquia</div>
+  <div class="g c3 center">
+    <article class="case"><div class="frame f34 contain"><video src="cacau-franquia-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Conteúdo para franquia</h3><p>Vídeo promocional produzido para um cliente do setor de franquias.</p></div></article>
+    <article class="case"><div class="frame f34 contain"><video src="cacau-show-podcastclisente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Podcast de franquia</h3><p>Vídeo de divulgação de podcast, produzido para cliente.</p></div></article>
+  </div>
+  <div class="eyebrow grp">Imobiliário</div>
+  <div class="g c3 center">
+    <article class="case"><div class="frame f34 contain"><video src="virginia-venda-terreno-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Imobiliário</span><h3>Venda de terreno</h3><p>Edição automatizada com Remotion, um editor de vídeo programático (React) controlado por IA: clipes numerados viram Stories com legenda, card e trilha.</p><div class="origin">Remotion · React · vídeo programático · Whisper</div></div></article>
+    <article class="case"><div class="frame f34 contain"><video src="virginia-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Vídeo institucional</h3><p>Vídeo produzido para cliente do mercado imobiliário.</p></div></article>
+  </div>
+
+  <div class="head sub"><div><span class="eyebrow">Série família</span><h2>Cenas geradas com IA</h2></div><p>Gerado com IA (Hailuo/MiniMax) a partir de prompt meu.</p></div>
+  <div class="g c3 center">
+    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-01.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 1</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
+    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-02.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 2</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
+    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-03.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 3</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
+    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-04.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 4</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
+    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-05.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 5</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
+  </div>
+</div></section>
+
+<section class="alt" id="imagens"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Imagens com IA</span><h2 style="margin-top:14px">Direção <em class="gold">visual</em></h2></div>
+    <p>Personagens e cenas criados por mim com IA.</p>
+  </div>
+  <div class="g c3 center">
+    <article class="case"><div class="frame f34 cover"><img src="influencer_batom_loira_v1.png" alt="Ana, imagem base" loading="lazy"></div><div class="body"><span class="tag">Personagem</span><h3>Ana, imagem base</h3><p>Referência fixa do personagem, criada com IA.</p><div class="origin">ComfyUI · identidade travada</div></div></article>
+    <article class="case"><div class="frame f34 cover"><img src="criacao-influencer-comfyui.png" alt="Ana com o produto" loading="lazy"></div><div class="body"><span class="tag">Personagem</span><h3>Ana com o produto</h3><p>Do rosto de referência à pose final, mantendo a identidade.</p><div class="origin">ComfyUI · Qwen Image Edit</div></div></article>
+  </div>
+  <div class="g c3" style="margin-top:26px">
+    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-01.png" alt="Luz e movimento" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Luz e movimento</h3><p>Cena criada do zero com IA, com foco em luz, textura e profundidade.</p><div class="origin">ComfyUI</div></div></article>
+    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-02.png" alt="Retrato com luz natural" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Retrato com luz natural</h3><p>Retrato realista criado com IA, com iluminação natural e detalhe de pele e tecido.</p><div class="origin">ComfyUI</div></div></article>
+    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-03.png" alt="Pôr do sol na varanda" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Pôr do sol na varanda</h3><p>Cena de fim de tarde criada com IA, com contraluz e profundidade de campo.</p><div class="origin">ComfyUI</div></div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Certificações</span><h2 style="margin-top:14px">Credenciais <em class="gold">verificáveis</em></h2></div>
+    <p>Emitidas pelo Google Skillshop e pela Anthropic Academy, todas na minha carteira digital.</p>
+  </div>
+  <div class="pillars" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr))">
+    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 30/09/2026</div><h3>Google Ads Search</h3><p>Certificação em campanhas na Rede de Pesquisa.</p></div>
+    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 21/09/2026</div><h3>AI-Powered Performance Ads</h3><p>Campanhas de performance com IA no Google Ads.</p></div>
+    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 21/09/2026</div><h3>Campaign Manager 360</h3><p>Gestão e mensuração de campanhas de display.</p></div>
+    <div class="pillar"><div class="origin" style="margin:0 0 10px">Anthropic Academy · 17/09/2026</div><h3>Claude 101</h3><p>Fundamentos do Claude. Somam 9 cursos concluídos na Academy, entre eles Claude Code, MCP e AI Fluency.</p></div>
+  </div>
+  <div class="certs" style="margin-top:34px;align-items:center">
+    <a class="btn fill" href="https://skillshop.credential.net/profile/rafaelabrao/wallet" target="_blank" rel="noopener">Ver minha wallet de certificados</a>
+  </div>
+</div></section>
+
+<section class="contact" id="contato"><div class="wrap">
+  <span class="eyebrow">Contato</span>
+  <h2>Vamos criar algo <em>extraordinário</em></h2>
+  <div class="rule" style="margin:0 auto"></div>
+  <div class="links">
+    <a class="btn fill" href="mailto:rvnegocioss@gmail.com">rvnegocioss@gmail.com</a>
+    <a class="btn" href="https://wa.me/5534996775156">WhatsApp (34) 99677-5156</a>
+    <a class="btn" href="https://www.linkedin.com/in/rafaeloliveiraimob/">LinkedIn</a>
+  </div>
+</div></section>
+
+<footer>© Rafael Oliveira Abrão · Uberlândia, MG</footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Mídia ampliada"><button type="button" aria-label="Fechar">&times;</button><img alt=""><video controls playsinline></video></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), im=lb.querySelector('img'), vd=lb.querySelector('video');
+  function close(){lb.classList.remove('on','isvid');im.removeAttribute('src');vd.pause();vd.removeAttribute('src');vd.load();}
+  document.querySelectorAll('.frame img').forEach(function(el){
+    el.addEventListener('click',function(){im.src=el.currentSrc||el.src;im.alt=el.alt;lb.classList.remove('isvid');lb.classList.add('on');});
+  });
+  document.querySelectorAll('.frame video').forEach(function(el){
+    el.removeAttribute('controls'); el.muted=true; el.parentNode.classList.add('hasvid');
+    el.parentNode.addEventListener('click',function(){
+      vd.src=el.getAttribute('src').split('#')[0]; vd.muted=false; lb.classList.add('on','isvid');
+      var pr=vd.play(); if(pr&&pr.catch){pr.catch(function(){});}
+    });
+  });
+  lb.addEventListener('click',function(e){ if(e.target!==vd) close(); });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
