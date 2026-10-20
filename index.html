@@ -3,351 +3,452 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rafael Oliveira Abrão — Portfólio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<title>Rafael Oliveira Abrão — Automação, IA e Design</title>
+<meta name="description" content="Rafael Oliveira Abrão: engenharia de IA aplicada a marketing. Agentes, automação, tráfego pago, conteúdo generativo e design. Uberlândia-MG e remoto.">
+<link rel="canonical" href="https://rvnegocioss-cloud.github.io/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Rafael Oliveira Abrão — Automação, IA e Design">
+<meta property="og:description" content="Engenharia de IA aplicada a marketing: agentes, automação e conteúdo generativo.">
+<meta property="og:url" content="https://rvnegocioss-cloud.github.io/portfolio/">
+<meta property="og:image" content="https://rvnegocioss-cloud.github.io/portfolio/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Rafael Oliveira Abrão","url":"https://rvnegocioss-cloud.github.io/portfolio/","image":"https://rvnegocioss-cloud.github.io/portfolio/img/rafael-hero.jpg","description":"Engenharia de IA aplicada a marketing: agentes, automação e conteúdo generativo.","email":"mailto:rvnegocioss@gmail.com","telephone":"+55 34 99677-5156","address":{"@type":"PostalAddress","addressLocality":"Uberlândia","addressRegion":"MG","addressCountry":"BR"},"sameAs":["https://www.linkedin.com/in/rafaeloliveiraimob/"],"knowsAbout":["Claude Code","MCP","n8n","Python","ComfyUI","Meta Ads","Google Ads","Remotion"]}
+</script>
 <style>
+@font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(fonts/space-grotesk.woff2) format("woff2");font-weight:500 700;font-style:normal;font-display:swap}
 :root{
-  --bg:#ffffff; --bg2:#f7f5f1; --card:#ffffff; --line:#e7e2d9;
-  --gold:#a8832e; --gold2:#8c6b1d; --text:#1c1a17; --muted:#6c655a;
-  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+  --bg:#FAFAF7;--surface:#FFFFFF;--ink:#16181D;--ink-2:#3A3F47;--muted:#5E636B;--line:#E4E2DC;
+  --accent:#9A7420;--accent-soft:#F3ECDD;--dark:#121418;--print:#F1F0EC;
+  --f:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--fh:"Space Grotesk",Inter,system-ui,sans-serif;
+  --gut:max(20px,calc((100vw - 1120px) / 2));
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink-2);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased;padding-top:56px}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-.gold{color:var(--gold)}
-.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-weight:500}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
-.rule{width:64px;height:1px;background:var(--gold);margin:22px 0}
+img,picture{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--fh);color:var(--ink);font-weight:600;line-height:1.15}
+h2{font-size:clamp(25px,3vw,31px)}
+h2 em{font-style:normal;color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow,.tag{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-nav .logo{font-family:var(--serif);font-size:22px;letter-spacing:.14em}
-nav ul{display:flex;gap:28px;list-style:none}
-nav a{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);transition:color .25s}
-nav a:hover{color:var(--gold2)}
+.nav{position:fixed;top:0;left:0;right:0;height:56px;z-index:30;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.logo{font:600 20px var(--fh);color:var(--ink);letter-spacing:-.01em}
+.links{display:none;list-style:none;gap:28px;align-items:center}
+.links a{font-size:13px;font-weight:500;color:var(--ink-2)}
+.links a:hover{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);cursor:pointer}
+.menu-btn .x{display:none}
+.menu-btn[aria-expanded=true] .x{display:block}
+.menu-btn[aria-expanded=true] .m{display:none}
+.panel{position:absolute;top:56px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 20px 16px;display:none}
+.panel.open{display:block}
+.panel a{display:block;padding:12px 0;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line)}
+@media(min-width:860px){.links{display:flex}.menu-btn,.panel{display:none!important}}
+
+/* BOTOES */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 20px;border-radius:12px;border:1px solid var(--ink);font:600 16px/1.2 var(--f);color:var(--ink);background:transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn.fill{background:var(--ink);color:#fff}
+.btn.fill:hover{background:#000}
+.btn:not(.fill):hover{background:var(--accent-soft);border-color:var(--accent)}
+.btn.sm{min-height:40px;padding:8px 16px;font-size:13px}
+.cv-pendente{display:none}
 
 /* HERO */
-.hero{padding:140px 0 120px;background:var(--bg)}
-.hero h1.nome{font-size:clamp(52px,9.2vw,132px);letter-spacing:-.02em;line-height:1;margin:0 0 28px}
-.hero p.lead{font-size:clamp(16px,1.8vw,20px);max-width:620px;color:var(--muted)}
-.hero .cta{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
-.btn{display:inline-block;padding:15px 30px;border:1px solid var(--gold);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;transition:.25s;cursor:pointer}
-.btn.fill{background:var(--gold);color:#fff}
-.btn.fill:hover{background:var(--gold2)}
-.btn:not(.fill):hover{background:rgba(201,162,75,.12)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:84px;border-top:1px solid var(--line)}
-.stat{padding:28px 0;border-right:1px solid var(--line);padding-left:28px}
-.stat:first-child{padding-left:0}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-family:var(--serif);font-size:44px;font-weight:500;color:var(--gold2);line-height:1}
-.stat span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.hero{padding:40px 0 48px}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(36px,5vw,56px);letter-spacing:-.02em;line-height:1.05;margin:12px 0 16px}
+.lead{font-size:20px;color:var(--ink-2);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.stats{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;font-size:13px;color:var(--muted);padding-top:16px;border-top:1px solid var(--line);max-width:560px}
+.stats b{font:600 25px var(--fh);color:var(--ink);margin-right:4px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:16px}
+.tools li{font-size:13px;font-weight:500;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2)}
+.photo{position:relative;justify-self:start;width:min(100%,360px);padding:0 10px 10px 0}
+.photo::before{content:"";position:absolute;top:10px;left:10px;right:0;bottom:0;border:2px solid var(--accent);border-radius:20px}
+.photo img{position:relative;width:100%;height:auto;aspect-ratio:1;border-radius:20px;background:var(--print)}
+@media(min-width:860px){.hero{padding:64px 0}.hero .wrap{grid-template-columns:1.25fr .75fr;gap:64px}.photo{justify-self:end;width:min(100%,400px)}}
 
-/* SECTIONS */
-section{padding:110px 0;border-top:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
-.head h2{font-size:clamp(38px,5vw,64px)}
-.head p{max-width:420px;color:var(--muted);font-size:15px}
+/* SECOES / FAIXAS */
+.band,.sec{padding:40px 0;border-top:1px solid var(--line)}
+.band.alt,.sec.alt{background:var(--accent-soft)}
+.sec-head,.band-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.sec-head h2,.band-head h2{margin-top:8px}
+.sec-head p,.band-head p{max-width:520px;color:var(--muted);margin-top:8px}
+.band-head.sub{margin-top:40px}
+.arrows{display:flex;gap:8px}
+.arr{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.arr:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.arr:disabled{opacity:.4;cursor:default}
 
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
-.about p{font-size:17px;color:#3a362f;margin-bottom:18px}
-.skills{list-style:none;border-top:1px solid var(--line)}
-.skills li{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
-.skills li i{font-style:normal;color:var(--gold)}
+/* CARROSSEL */
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px var(--gut) 16px;scroll-padding-inline:var(--gut);-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;cursor:grab;align-items:stretch}
+.track.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.track img{-webkit-user-drag:none}
+.card{flex:0 0 min(86vw,340px);scroll-snap-align:start;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card.tall{flex-basis:min(62vw,215px)}
+.card.big{flex-basis:min(90vw,560px)}
+.card.w2{flex-basis:min(90vw,520px)}
+.card.wide{flex-basis:min(86vw,380px)}
+.card .body{padding:16px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:20px;margin:4px 0 8px}
+.card p{font-size:14px;line-height:1.6;color:var(--muted)}
+.card p+p{margin-top:8px}
+.card ul.pts{margin:12px 0 0 18px;font-size:14px;color:var(--ink-2)}
+.origin{margin-top:auto;padding-top:12px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--ink-2)}
+.card.todo{border-style:dashed;background:transparent}
+.card.todo p{color:var(--ink-2)}
+.card.ph{flex-basis:min(62vw,240px);aspect-ratio:4/5}
+.ph-body{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:12px}
+.chips li{font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.divider{flex:0 0 auto;align-self:stretch;display:flex;align-items:center;padding:0 8px 0 0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);scroll-snap-align:start}
 
-/* CASES */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
-.grid.tall{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.case{background:var(--card);border:1px solid var(--line);transition:.3s;overflow:hidden}
-.case:hover{border-color:var(--gold);transform:translateY(-4px)}
-.case video,.case img{display:block;width:100%;background:#000;aspect-ratio:16/10;object-fit:contain}
-.case.v video{aspect-ratio:9/16;max-height:440px}
-.case.p video,.case.p img{aspect-ratio:4/5;max-height:400px}
-.case.w video{aspect-ratio:2944/1098}
-.case.l img{aspect-ratio:16/9}
-.case.t img{aspect-ratio:2/3}
-.grid{align-items:start}
-.grid.vid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.grid.wide{grid-template-columns:repeat(auto-fill,minmax(480px,1fr))}
-@media(max-width:560px){.grid.wide{grid-template-columns:1fr}}
-.case .body{padding:22px 24px 26px}
-.case .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-.case h3{font-size:27px;margin:8px 0 8px}
-.case p{font-size:14px;color:var(--muted);line-height:1.65}
-.origin{margin-top:14px;font-size:11px;letter-spacing:.12em;color:#8a8275;text-transform:uppercase}
+/* MIDIA */
+.frame{position:relative;width:100%;background:var(--print);overflow:hidden}
+.frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame.fit img{object-fit:contain}
+.r169{aspect-ratio:16/9}.r54{aspect-ratio:5/4}.r34{aspect-ratio:3/4}.r916{aspect-ratio:9/16}.r45{aspect-ratio:4/5}.r43{aspect-ratio:4/3}.r268{aspect-ratio:2944/1098}
+.frame[data-zoom]{cursor:zoom-in}
+.frame[data-zoom=video]{cursor:pointer}
+.frame video{pointer-events:none}
+.frame[data-zoom=video]::after{content:"";position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(18,20,24,.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/28px no-repeat;pointer-events:none;transition:transform .2s}
+.frame[data-zoom=video]:hover::after{transform:scale(1.08)}
+.strip{display:grid;gap:8px;padding:8px;background:var(--surface)}
+.strip.c3{grid-template-columns:repeat(3,1fr)}
+.strip.c2{grid-template-columns:repeat(2,1fr)}
+.strip .frame{border-radius:8px}
 
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.pillar{padding:34px 30px;border:1px solid var(--line);background:var(--card)}
-.pillar .n{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
-.pillar h3{font-size:28px;margin:14px 0 10px}
-.pillar p{font-size:14px;color:var(--muted)}
+/* DESTAQUES */
+.feat{display:grid;gap:16px}
+.fcard{display:flex;flex-direction:column;gap:8px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .2s,transform .2s}
+.fcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.fcard h3{font-size:20px}
+.fcard p{font-size:14px;color:var(--muted)}
+.fcard .go{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent)}
+@media(min-width:760px){.feat{grid-template-columns:repeat(3,1fr)}}
 
-.certs{display:flex;flex-wrap:wrap;gap:14px}
-.cert{padding:14px 26px;border:1px solid var(--line);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+/* COMO TRABALHO / SOBRE / CERTS */
+.steps{display:grid;gap:16px;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:600 25px var(--fh);color:var(--accent);margin-bottom:8px}
+.steps h3{font-size:20px;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--muted)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.about{display:grid;gap:32px}
+.about p{margin-bottom:16px;max-width:680px}
+.skills{list-style:none;border-top:1px solid var(--line);align-self:start}
+.skills li{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+@media(min-width:860px){.about{grid-template-columns:1.4fr .6fr;gap:64px}}
+.certs{display:grid;gap:16px}
+.cert{padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.cert .origin{padding:0 0 8px}
+.cert p{font-size:14px;color:var(--muted)}
+@media(min-width:760px){.certs{grid-template-columns:repeat(4,1fr)}}
+.certs+.btn{margin-top:24px}
 
-/* CONTACT */
-.contact{text-align:center;padding:130px 0}
-.contact h2{font-size:clamp(44px,7vw,92px);margin:20px 0}
-.contact h2 em{color:var(--gold2)}
-.contact .links{display:flex;justify-content:center;gap:16px;margin-top:38px;flex-wrap:wrap}
-footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;font-size:11px;letter-spacing:.24em;color:#8a8275;text-transform:uppercase}
+/* DEPOIMENTOS (so em revisao) */
+.so-revisao{display:none}
+body.revisao .so-revisao{display:block}
+.depo{display:grid;gap:16px}
+.depo .card{flex:none;border-style:dashed;background:transparent;padding:24px;color:var(--ink-2)}
+@media(min-width:760px){.depo{grid-template-columns:1fr 1fr}}
 
-@media(max-width:860px){
-  nav ul{display:none}
-  .about,.pillars{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr}
-  .stat{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
-  section{padding:76px 0}.hero{padding:80px 0 64px}
-}
+/* CONTATO */
+.contact{text-align:center;padding:48px 0}
+.contact h2{font-size:clamp(31px,4.5vw,49px);margin:8px 0 24px}
+.contact .row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--muted)}
 
-/* GALERIA UNIFORME */
-.g{display:grid;gap:26px}
-.g.c3{grid-template-columns:repeat(3,1fr)}
-.g.c2{grid-template-columns:repeat(2,1fr)}
-.g.center{display:flex;flex-wrap:wrap;justify-content:center}
-.g.center .case{flex:0 0 calc((100% - 52px)/3)}
-.g .case{display:flex;flex-direction:column;transform:none}
-.g .case:hover{transform:none;border-color:var(--gold)}
-.frame{position:relative;width:100%;background:#000;overflow:hidden}
-.frame.f34{aspect-ratio:3/4}.frame.f219{aspect-ratio:21/9}.frame.f169{aspect-ratio:16/9}
-.frame video,.frame img{position:absolute;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;background:#000}
-.frame.cover img{object-fit:cover}
-.g .case .body{flex:1;display:flex;flex-direction:column;padding:20px 22px 22px}
-.g .case h3{font-size:25px;margin:6px 0 8px;line-height:1.15}
-.g .case p{font-size:13.5px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.g .case .origin{margin-top:auto;padding-top:12px}
-.head.sub{margin:96px 0 40px}
-.head.sub h2{margin-top:14px;font-size:clamp(32px,4vw,52px)}
-@media(max-width:860px){.g.c3{grid-template-columns:repeat(2,1fr)}.g.center .case{flex:0 0 calc((100% - 26px)/2)}}
-@media(max-width:560px){.g.c3,.g.c2{grid-template-columns:1fr}.g.center .case{flex:0 0 100%}}
-.pillar .n,.skills li i{display:none}
-.grp{margin:44px 0 16px}.grp:first-of-type{margin-top:0}
-
-/* AMPLIAR IMAGEM AO CLICAR */
-.frame img{cursor:zoom-in}
-.lb{position:fixed;inset:0;z-index:100;background:rgba(18,16,12,.82);display:none;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(18,20,24,.88);display:none;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
 .lb.on{display:flex}
-.lb img{max-width:100%;max-height:100%;object-fit:contain;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lb button{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer}
-
-/* DESTAQUE: EXTENSAO */
-.feature{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--gold);background:var(--card);margin-bottom:34px}
-.feature .frame{aspect-ratio:1920/942;min-height:0}
-.feature .ftext{padding:36px 38px}
-.feature .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-.feature h3{font-size:34px;margin:10px 0 14px;line-height:1.1}
-.feature p{font-size:14.5px;line-height:1.7;color:var(--muted)}
-.feature ul{margin:16px 0 0 18px;font-size:14px;color:#3a362f;line-height:1.8}
-
-
-/* VIDEO AMPLIADO */
-.frame.hasvid{cursor:pointer}
-.frame.hasvid::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(10,9,8,.62) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/34px no-repeat;transition:transform .2s;pointer-events:none}
-.frame.hasvid:hover::after{transform:scale(1.08)}
-.lb video{display:none;max-width:100%;max-height:100%;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lb.isvid video{display:block;height:100%;width:auto;max-width:100%}
+.lb img,.lb video{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);border-radius:8px}
+.lb video{display:none;background:#000}
+.lb.isvid video{display:block;height:100%;width:auto}
 .lb.isvid img{display:none}
 .lb.isvid{cursor:default}
+.lb button{position:absolute;top:12px;right:16px;width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
+.lb button:focus-visible{outline-color:#fff}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-go" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+</svg>
 
-<nav><div class="wrap">
-  <a href="#topo" class="logo">R·A</a>
-  <ul>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#trafego">Tráfego</a></li>
-    <li><a href="#automacoes">Automações</a></li>
-    <li><a href="#videos">Vídeos</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</div></nav>
-
-<header class="hero" id="topo"><div class="wrap">
-  <h1 class="nome">Rafael Oliveira Abrão</h1>
-  <p class="lead">Engenharia de IA aplicada a marketing: agentes, automação e conteúdo generativo.</p>
-</div></header>
-
-<section id="sobre"><div class="wrap about">
-  <div>
-    <span class="eyebrow">Sobre</span>
-    <h2 style="font-size:clamp(38px,5vw,60px);margin:16px 0 8px">Marketing com <em class="gold">engenharia</em></h2>
-    <div class="rule"></div>
-    <p>Construo sistemas de marketing e automação com IA: workflows agentic, integrações por API, pipelines de conteúdo generativo e dashboards de performance. Desenvolvo com vibe coding e Claude Code, e uso MCP (Model Context Protocol) para o Claude controlar ferramentas reais.</p>
-    <p>Freelancer em agentes de IA, n8n e tráfego pago (Meta Ads e Google Ads), em Uberlândia-MG e remoto. Orquestro em Python e TypeScript, com logs, tratamento de erro e monitoramento.</p>
-    <p>Tenho expertise em orquestração de agentes: um agente coordena outros, inclusive em máquinas diferentes, como o Claude delegando tarefas a modelos menores no RVbot e a outro Claude em outro PC. Conectei Figma, ClickUp e Google Ads ao Claude por MCP. É IA integrada ao fluxo de trabalho, não só automação, e acelera prazos para quem tem o conhecimento para conduzi-la.</p>
+<header class="nav" id="topo">
+  <div class="wrap">
+    <a href="#topo" class="logo" aria-label="Rafael Abrão, início">R. Abrão</a>
+    <ul class="links">
+      <li><a href="#destaques">Trabalhos</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#certificacoes">Certificações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-r">
+      <a class="btn sm fill cv-pendente" href="curriculo-rafael-abrao.pdf" download><svg class="ico" aria-hidden="true"><use href="#i-dl"/></svg>Currículo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="panel" aria-label="Abrir menu"><svg class="ico m" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ico x" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
   </div>
-  <ul class="skills">
-    <li>Vibe coding · Claude Code <i>01</i></li>
-    <li>Agentes de IA · MCP <i>02</i></li>
-    <li>Automação n8n · Python <i>03</i></li>
-    <li>Tráfego pago · CPA · CTR · ROAS <i>04</i></li>
-    <li>IA generativa · ComfyUI <i>05</i></li>
-  </ul>
-</div></section>
+  <nav class="panel" id="panel" aria-label="Menu principal">
+    <a href="#destaques">Trabalhos</a><a href="#design">Design</a><a href="#certificacoes">Certificações</a><a href="#contato">Contato</a>
+  </nav>
+</header>
 
-<section id="trafego"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Tráfego pago</span><h2 style="margin-top:14px">Dados que <em class="gold">decidem</em></h2></div>
-    <p>Campanhas no Meta Ads e no Google Ads, acompanhadas por uma ferramenta que eu mesmo desenvolvi.</p>
-  </div>
-  <div class="about">
+<main>
+<section class="hero">
+  <div class="wrap">
     <div>
-      <h3 style="font-size:34px;margin-bottom:14px">Dashboard próprio de campanhas</h3>
+      <span class="eyebrow">IA aplicada · Automação · Design</span>
+      <h1>Rafael Oliveira Abrão</h1>
+      <p class="lead">Engenharia de IA aplicada a marketing: agentes, automação e conteúdo generativo.</p>
+      <div class="cta">
+        <a class="btn fill" href="#destaques">Ver trabalhos</a>
+        <a class="btn cv-pendente" href="curriculo-rafael-abrao.pdf" download><svg class="ico" aria-hidden="true"><use href="#i-dl"/></svg>Baixar currículo</a>
+      </div>
+      <ul class="stats">
+        <li><b>9</b>cursos Anthropic Academy</li>
+        <li><b>3</b>certificações Google Skillshop</li>
+        <li>workflow de vídeo com <b>46</b> nós</li>
+      </ul>
+      <ul class="tools" aria-label="Ferramentas">
+        <li>Claude Code</li><li>MCP</li><li>n8n</li><li>Python</li><li>ComfyUI</li><li>Meta Ads</li><li>Google Ads</li><li>Remotion</li>
+      </ul>
+    </div>
+    <div class="photo">
+      <picture>
+        <source srcset="img/rafael-hero.webp" type="image/webp">
+        <img src="img/rafael-hero.jpg" width="640" height="640" fetchpriority="high" alt="Foto de Rafael Oliveira Abrão, de blazer grafite, sorrindo">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="destaques" aria-labelledby="t-dest">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Destaques</span><h2 id="t-dest">Três trabalhos <em>para começar</em></h2></div></div>
+    <div class="feat">
+      <a class="fcard" href="#rvbot"><span class="tag">Criado por mim</span><h3>RVbot Extension</h3><p>Qualquer plataforma SaaS, por comando de voz. Extensão de Chrome (Manifest V3) com agente de IA.</p><span class="go">Ver o case <svg class="ico" aria-hidden="true"><use href="#i-go"/></svg></span></a>
+      <a class="fcard" href="#comfyui"><span class="tag">Desenvolvido por mim</span><h3>Pipelines ComfyUI</h3><p>Workflows de IA generativa reprodutíveis, com processamento em lote e identidade de personagem travada. Estrutura real de 46 nós.</p><span class="go">Ver o case <svg class="ico" aria-hidden="true"><use href="#i-go"/></svg></span></a>
+      <a class="fcard" href="#dashboard"><span class="tag">Desenvolvido por mim</span><h3>Dashboard próprio de campanhas</h3><p>Integrado à Meta Marketing API, com análise por IA via Claude API.</p><span class="go">Ver o case <svg class="ico" aria-hidden="true"><use href="#i-go"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="design" aria-labelledby="t-design">
+  <div class="wrap">
+    <div class="band-head">
+      <div><h2 id="t-design">Design <em>gráfico</em></h2></div>
+      <div class="arrows"><button class="arr" type="button" data-dir="-1" aria-label="Design gráfico: anterior"><svg class="ico" aria-hidden="true"><use href="#i-l"/></svg></button><button class="arr" type="button" data-dir="1" aria-label="Design gráfico: próximo"><svg class="ico" aria-hidden="true"><use href="#i-r"/></svg></button></div>
+    </div>
+  </div>
+  <div class="track" tabindex="0" role="region" aria-label="Design gráfico, carrossel">
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-01.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 1: Capa do carrossel"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-02.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 2: Tráfego pago"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-03.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 3: Automação e RVbot"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-04.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 4: Fluxo de postagem automatizada"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-05.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 5: IA generativa"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-06.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 6: Ferramentas"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-07.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 7: Contato"></div></article>
+    <article class="card"><div class="frame r45" data-zoom="img"><img src="img/carrossel/slide-08.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="Carrossel RVMARKETING DIGITAL, slide 8: Este carrossel foi feito por IA"></div></article>
+  </div>
+</section>
+
+<section class="band alt" id="automacoes" aria-labelledby="t-aut">
+  <div class="wrap">
+    <div class="band-head">
+      <div><span class="eyebrow">Automações com IA</span><h2 id="t-aut">Menos trabalho <em>manual</em></h2><p>Fluxos e ferramentas que fazem sozinhos o que tomaria horas.</p></div>
+      <div class="arrows"><button class="arr" type="button" data-dir="-1" aria-label="Automações com IA: anterior"><svg class="ico" aria-hidden="true"><use href="#i-l"/></svg></button><button class="arr" type="button" data-dir="1" aria-label="Automações com IA: próximo"><svg class="ico" aria-hidden="true"><use href="#i-r"/></svg></button></div>
+    </div>
+  </div>
+  <div class="track" tabindex="0" role="region" aria-label="Automações com IA, carrossel">
+    <article class="card big" id="rvbot"><div class="frame r169 fit" data-zoom="img"><img src="extensao-google-ads.png" width="1920" height="942" loading="lazy" decoding="async" alt="Extensão RVbot ao lado do Google Ads"></div>
+      <div class="body"><span class="tag">Diferencial · criado por mim</span><h3>RVbot Extension: qualquer plataforma SaaS, por comando de voz</h3>
+      <p>Extensão de Chrome (Manifest V3) que opera o navegador por comando de voz. Não se limita ao Google Ads: executa tarefas em qualquer plataforma SaaS, como CRM, dashboards, redes sociais e painéis de anúncio, sem depender de API nem de integração pronta.</p>
+      <ul class="pts"><li>Agente de IA que navega, clica e digita como uma pessoa</li><li>Memória, agenda e servidor MCP local</li><li>Roteador próprio entre LLMs locais (Ollama) e gratuitos</li></ul>
+      <div class="origin">Chrome Manifest V3 · MCP · Ollama · comando de voz</div></div></article>
+        <article class="card" id="comfyui"><div class="frame r169 fit" data-zoom="img"><img src="workflow-comfyui.png" width="1950" height="941" loading="lazy" decoding="async" alt="Workflow ComfyUI de vídeo com LTX 2.3"></div><div class="body"><span class="tag">IA generativa</span><h3>Pipelines ComfyUI</h3><p>Workflows de IA generativa (LTX 2.3, InfiniteTalk, Qwen Image Edit) reprodutíveis, com processamento em lote e identidade de personagem travada. A imagem mostra a estrutura real do workflow de vídeo validado, com 46 nós.</p><div class="origin">ComfyUI · LTX 2.3 · InfiniteTalk · Qwen Image Edit</div></div></article>
+        <article class="card"><div class="frame r169" data-zoom="img"><img src="fluxos-postagens.png" width="1600" height="940" loading="lazy" decoding="async" alt="Calendário de postagens"></div><div class="body"><span class="tag">Automação</span><h3>Calendário de postagens</h3><p>Scripts Python agendados no Windows, um por fluxo, com log estruturado, calendário do que foi postado e do que está agendado, status de cada fluxo e alertas no Telegram. Mais estável e observável que n8n. Nomes ocultos.</p><div class="origin">Python · Agendador do Windows · logs</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><img src="crm-leads.png" width="1600" height="1000" loading="lazy" decoding="async" alt="CRM operado pelo Claude"></div><div class="body"><span class="tag">CRM próprio</span><h3>CRM operado pelo Claude</h3><p>CRM próprio desenvolvido por mim com vibe coding e Claude Code, com leads, contatos, oportunidades e tarefas, operado por um agente de IA e consultado e atualizado por API. Dados ocultos.</p><div class="origin">CRM · API · agente de IA</div></div></article>
+  </div>
+</section>
+
+<section class="band" id="trafego" aria-labelledby="t-traf">
+  <div class="wrap">
+    <div class="band-head">
+      <div><span class="eyebrow">Tráfego pago</span><h2 id="t-traf">Dados que <em>decidem</em></h2><p>Campanhas no Meta Ads e no Google Ads, acompanhadas por uma ferramenta que eu mesmo desenvolvi.</p></div>
+      <div class="arrows"><button class="arr" type="button" data-dir="-1" aria-label="Tráfego pago: anterior"><svg class="ico" aria-hidden="true"><use href="#i-l"/></svg></button><button class="arr" type="button" data-dir="1" aria-label="Tráfego pago: próximo"><svg class="ico" aria-hidden="true"><use href="#i-r"/></svg></button></div>
+    </div>
+  </div>
+  <div class="track" tabindex="0" role="region" aria-label="Tráfego pago, carrossel">
+    <article class="card big" id="dashboard"><div class="body"><span class="tag">Tráfego pago</span><h3>Dashboard próprio de campanhas</h3>
       <p>Dashboard próprio, integrado à Meta Marketing API, que consolida campanhas, anúncios e métricas de performance (como CPA, CTR e ROAS) em uma tela, com análise por IA via Claude API.</p>
       <p>Em vez de abrir conta por conta no Gerenciador, vejo tudo junto e comparo o desempenho de cada anúncio. As métricas são automatizadas em planilhas do Google Sheets, direto do Drive, tudo integrado.</p>
       <p>Como criei o sistema, ele é adaptável: pode se adequar ao fluxo de trabalho de qualquer empresa.</p>
-      <div class="origin">Desenvolvido por mim · Meta Marketing API · Claude API · Google Sheets · Drive · vibe coding</div>
+      <ul class="chips"><li>Campanhas e anúncios</li><li>Métricas de performance</li><li>Meta Marketing API</li><li>Análise com Claude API</li></ul>
+      <div class="origin">Desenvolvido por mim · Meta Marketing API · Claude API · Google Sheets · Drive · vibe coding</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><img src="campanhas-meta.png" width="1600" height="950" loading="lazy" decoding="async" alt="Campanha de leads no Meta Ads"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Campanha de leads na Meta</h3><p>Campanha de geração de leads na Meta com dois públicos em teste e objetivo de conversa no WhatsApp: 72 leads, acompanhada no painel próprio. Nomes e valores ocultos.</p><div class="origin">Meta Ads · Marketing API · painel próprio</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><img src="dashboard-agencia.png" width="1600" height="1000" loading="lazy" decoding="async" alt="Dashboard de campanhas"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Dashboard de campanhas</h3><p>Painel próprio que reúne as contas, o gasto em campanhas da Meta, os alertas e o status de cada automação em uma tela. Nomes ocultos.</p><div class="origin">Meta Graph API · Python · Claude API</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><img src="google-ads.png" width="1534" height="937" loading="lazy" decoding="async" alt="Google Ads"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Google Ads</h3><p>Conta do Google Ads com a API ativada para consultar campanhas e relatórios por código. Nomes e IDs ocultos.</p><div class="origin">Google Ads API · OAuth</div></div></article>
+  </div>
+</section>
+
+<section class="band" id="imagens" aria-labelledby="t-img">
+  <div class="wrap">
+    <div class="band-head">
+      <div><span class="eyebrow">Imagens com IA</span><h2 id="t-img">Direção <em>visual</em></h2><p>Personagens e cenas criados por mim com IA.</p></div>
+      <div class="arrows"><button class="arr" type="button" data-dir="-1" aria-label="Imagens com IA: anterior"><svg class="ico" aria-hidden="true"><use href="#i-l"/></svg></button><button class="arr" type="button" data-dir="1" aria-label="Imagens com IA: próximo"><svg class="ico" aria-hidden="true"><use href="#i-r"/></svg></button></div>
+    </div>
+  </div>
+  <div class="track" tabindex="0" role="region" aria-label="Imagens com IA, carrossel">
+    <article class="card tall"><div class="frame r34" data-zoom="img"><picture><source srcset="img/influencer_batom_loira_v1.webp" type="image/webp"><img src="influencer_batom_loira_v1.png" width="864" height="1152" loading="lazy" decoding="async" alt="Ana, imagem base"></picture></div><div class="body"><span class="tag">Personagem</span><h3>Ana, imagem base</h3><p>Referência fixa do personagem, criada com IA.</p><div class="origin">ComfyUI · identidade travada</div></div></article>
+    <article class="card tall"><div class="frame r34" data-zoom="img"><picture><source srcset="img/criacao-influencer-comfyui.webp" type="image/webp"><img src="criacao-influencer-comfyui.png" width="864" height="1152" loading="lazy" decoding="async" alt="Ana com o produto"></picture></div><div class="body"><span class="tag">Personagem</span><h3>Ana com o produto</h3><p>Do rosto de referência à pose final, mantendo a identidade.</p><div class="origin">ComfyUI · Qwen Image Edit</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><picture><source srcset="img/cena-01.webp" type="image/webp"><img src="imagens-cenas/cena-01.png" width="1280" height="720" loading="lazy" decoding="async" alt="Luz e movimento"></picture></div><div class="body"><span class="tag">Cena</span><h3>Luz e movimento</h3><p>Cena criada do zero com IA, com foco em luz, textura e profundidade.</p><div class="origin">ComfyUI</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><picture><source srcset="img/cena-02.webp" type="image/webp"><img src="imagens-cenas/cena-02.png" width="1024" height="576" loading="lazy" decoding="async" alt="Retrato com luz natural"></picture></div><div class="body"><span class="tag">Cena</span><h3>Retrato com luz natural</h3><p>Retrato realista criado com IA, com iluminação natural e detalhe de pele e tecido.</p><div class="origin">ComfyUI</div></div></article>
+    <article class="card"><div class="frame r169" data-zoom="img"><picture><source srcset="img/cena-03.webp" type="image/webp"><img src="imagens-cenas/cena-03.png" width="1280" height="720" loading="lazy" decoding="async" alt="Pôr do sol na varanda"></picture></div><div class="body"><span class="tag">Cena</span><h3>Pôr do sol na varanda</h3><p>Cena de fim de tarde criada com IA, com contraluz e profundidade de campo.</p><div class="origin">ComfyUI</div></div></article>
+  </div>
+</section>
+
+<section class="sec" id="como" aria-labelledby="t-como">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Como trabalho</span><h2 id="t-como">Do diagnóstico à <em>medição</em></h2></div></div>
+    <ol class="steps">
+      <li><h3>Diagnóstico</h3><p>IA integrada ao fluxo de trabalho, não só automação.</p></li>
+      <li><h3>Protótipo com IA</h3><p>Desenvolvo com vibe coding e Claude Code.</p></li>
+      <li><h3>Automação com logs e alertas</h3><p>Orquestro em Python e TypeScript, com logs, tratamento de erro e monitoramento.</p></li>
+      <li><h3>Medição</h3><p>Integrações por API e dashboards de performance.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec alt" id="sobre" aria-labelledby="t-sobre">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">Sobre</span>
+      <h2 id="t-sobre" style="margin:8px 0 16px">Marketing com <em>engenharia</em></h2>
+      <p>Construo sistemas de marketing e automação com IA: workflows agentic, integrações por API, pipelines de conteúdo generativo e dashboards de performance. Desenvolvo com vibe coding e Claude Code, e uso MCP (Model Context Protocol) para o Claude controlar ferramentas reais.</p>
+      <p>Freelancer em agentes de IA, n8n e tráfego pago (Meta Ads e Google Ads), em Uberlândia-MG e remoto. Orquestro em Python e TypeScript, com logs, tratamento de erro e monitoramento.</p>
+      <p>Tenho expertise em orquestração de agentes: um agente coordena outros, inclusive em máquinas diferentes, como o Claude delegando tarefas a modelos menores no RVbot e a outro Claude em outro PC. Conectei Figma, ClickUp e Google Ads ao Claude por MCP. É IA integrada ao fluxo de trabalho, não só automação, e acelera prazos para quem tem o conhecimento para conduzi-la.</p>
     </div>
     <ul class="skills">
-      <li>Campanhas e anúncios <i>01</i></li>
-      <li>Métricas de performance <i>02</i></li>
-      <li>Meta Marketing API <i>03</i></li>
-      <li>Análise com Claude API <i>04</i></li>
+      <li>Vibe coding · Claude Code</li>
+      <li>Agentes de IA · MCP</li>
+      <li>Automação n8n · Python</li>
+      <li>Tráfego pago · CPA · CTR · ROAS</li>
+      <li>IA generativa · ComfyUI</li>
     </ul>
   </div>
-  <div class="g c3 center" style="margin-top:44px">
-    <article class="case"><div class="frame f169 contain"><img src="campanhas-meta.png" alt="Campanha de leads no Meta Ads" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Campanha de leads na Meta</h3><p>Campanha de geração de leads na Meta com dois públicos em teste e objetivo de conversa no WhatsApp: 72 leads, acompanhada no painel próprio. Nomes e valores ocultos.</p><div class="origin">Meta Ads · Marketing API · painel próprio</div></div></article>
-    <article class="case"><div class="frame f169 contain"><img src="dashboard-agencia.png" alt="Dashboard de campanhas" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Dashboard de campanhas</h3><p>Painel próprio que reúne as contas, o gasto em campanhas da Meta, os alertas e o status de cada automação em uma tela. Nomes ocultos.</p><div class="origin">Meta Graph API · Python · Claude API</div></div></article>
-    <article class="case"><div class="frame f169 contain"><img src="google-ads.png" alt="Google Ads" loading="lazy"></div><div class="body"><span class="tag">Tráfego pago</span><h3>Google Ads</h3><p>Conta do Google Ads com a API ativada para consultar campanhas e relatórios por código. Nomes e IDs ocultos.</p><div class="origin">Google Ads API · OAuth</div></div></article>
-  </div>
-</div></section>
+</section>
 
-<section class="alt" id="automacoes"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Automações com IA</span><h2 style="margin-top:14px">Menos trabalho <em class="gold">manual</em></h2></div>
-    <p>Fluxos e ferramentas que fazem sozinhos o que tomaria horas.</p>
+<section class="sec" id="certificacoes" aria-labelledby="t-cert">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Certificações</span><h2 id="t-cert">Credenciais <em>verificáveis</em></h2><p>Emitidas pelo Google Skillshop e pela Anthropic Academy, todas na minha carteira digital.</p></div></div>
+    <div class="certs">
+      <div class="cert"><div class="origin">Google Skillshop · 30/09/2026</div><h3>Google Ads Search</h3><p>Certificação em campanhas na Rede de Pesquisa.</p></div>
+      <div class="cert"><div class="origin">Google Skillshop · 21/09/2026</div><h3>AI-Powered Performance Ads</h3><p>Campanhas de performance com IA no Google Ads.</p></div>
+      <div class="cert"><div class="origin">Google Skillshop · 21/09/2026</div><h3>Campaign Manager 360</h3><p>Gestão e mensuração de campanhas de display.</p></div>
+      <div class="cert"><div class="origin">Anthropic Academy · 17/09/2026</div><h3>Claude 101</h3><p>Fundamentos do Claude. Somam 9 cursos concluídos na Academy, entre eles Claude Code, MCP e AI Fluency.</p></div>
+    </div>
+    <a class="btn fill" href="https://skillshop.credential.net/profile/rafaelabrao/wallet" target="_blank" rel="noopener">Ver minha wallet de certificados <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a>
   </div>
-    <div class="feature">
-    <div class="frame f169 contain"><img src="extensao-google-ads.png" alt="Extensão RVbot ao lado do Google Ads" loading="lazy"></div>
-    <div class="ftext">
-      <span class="tag">Diferencial · criado por mim</span>
-      <h3>RVbot Extension: qualquer plataforma SaaS, por comando de voz</h3>
-      <p>Extensão de Chrome (Manifest V3) que opera o navegador por comando de voz. Não se limita ao Google Ads: executa tarefas em qualquer plataforma SaaS, como CRM, dashboards, redes sociais e painéis de anúncio, sem depender de API nem de integração pronta.</p>
-      <ul>
-        <li>Agente de IA que navega, clica e digita como uma pessoa</li>
-        <li>Memória, agenda e servidor MCP local</li>
-        <li>Roteador próprio entre LLMs locais (Ollama) e gratuitos</li>
-      </ul>
-      <div class="origin">Chrome Manifest V3 · MCP · Ollama · comando de voz</div>
+</section>
+
+<section class="sec so-revisao" data-oculta id="depoimentos" aria-labelledby="t-depo">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Depoimentos</span><h2 id="t-depo">O que dizem <em>os clientes</em></h2></div></div>
+    <div class="depo">
+      <div class="card">[Espaço para depoimento: nome, cargo, empresa, com autorização]</div>
+      <div class="card">[Espaço para depoimento: nome, cargo, empresa, com autorização]</div>
     </div>
   </div>
-  <div class="g c2 center" style="margin-bottom:34px">
-    <article class="case" style="flex:0 0 100%"><div class="frame contain" style="aspect-ratio:1950/941"><img src="workflow-comfyui.png" alt="Workflow ComfyUI de vídeo com LTX 2.3" loading="lazy"></div><div class="body"><span class="tag">IA generativa</span><h3>Pipelines ComfyUI</h3><p>Workflows de IA generativa (LTX 2.3, InfiniteTalk, Qwen Image Edit) reprodutíveis, com processamento em lote e identidade de personagem travada. A imagem mostra a estrutura real do workflow de vídeo validado, com 46 nós.</p><div class="origin">ComfyUI · LTX 2.3 · InfiniteTalk · Qwen Image Edit</div></div></article>
-  </div>
-  <div class="g c2" style="margin-top:56px">
-    <article class="case"><div class="frame f169 contain"><img src="fluxo-postar-video-cliente.png" alt="Fluxo de postagem automática de vídeos" loading="lazy"></div>
-      <div class="body"><span class="tag">Cliente</span><h3>Postagem automática de vídeos</h3>
-      <p>Pipeline agentic de 24 nós integrado ao Google Sheets e ao Drive: lê a fila na planilha, baixa o vídeo do Drive, gera a legenda com IA e publica via Meta Graph API no Facebook, Instagram (Reels e Stories) e Threads. Webhooks, controle de erro e rotação automática de conteúdo.</p>
-      <div class="origin">n8n · Meta Graph API · Google Drive · LLM</div></div></article>
-    <article class="case"><div class="frame f169 contain"><img src="fluxo-financeiro-ema-cross-cliente.png" alt="Fluxo de estratégia EMA Cross" loading="lazy"></div>
-      <div class="body"><span class="tag">Cliente do mercado financeiro</span><h3>Estratégia de trading automatizada</h3>
-      <p>Roda no PC com MCP para o MetaTrader 5: busca o histórico, calcula o cruzamento de médias (EMA Cross) com backtest e dispara o alerta de compra pelo Telegram via webhook.</p>
-      <div class="origin">MetaTrader 5 · MCP · webhook · Telegram</div></div></article>
-  </div>
-  <div class="g c2" style="margin-top:26px">
-    <article class="case"><div class="frame f169 contain"><img src="fluxos-postagens.png" alt="Calendário de postagens" loading="lazy"></div><div class="body"><span class="tag">Automação</span><h3>Calendário de postagens</h3><p>Scripts Python agendados no Windows, um por fluxo, com log estruturado, calendário do que foi postado e do que está agendado, status de cada fluxo e alertas no Telegram. Mais estável e observável que n8n. Nomes ocultos.</p><div class="origin">Python · Agendador do Windows · logs</div></div></article>
-    <article class="case"><div class="frame f169 contain"><img src="crm-leads.png" alt="CRM operado pelo Claude" loading="lazy"></div><div class="body"><span class="tag">CRM próprio</span><h3>CRM operado pelo Claude</h3><p>CRM próprio desenvolvido por mim com vibe coding e Claude Code, com leads, contatos, oportunidades e tarefas, operado por um agente de IA e consultado e atualizado por API. Dados ocultos.</p><div class="origin">CRM · API · agente de IA</div></div></article>
-  </div>
-</div></section>
+</section>
 
-<section id="videos"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Vídeos com IA</span><h2 style="margin-top:14px">Trabalhos em <em class="gold">movimento</em></h2></div>
-    <p>Personagens fixos, voz clonada e cenas geradas com IA, produzidos para clientes e projetos próprios.</p>
+<section class="sec contact" id="contato" aria-labelledby="t-cont">
+  <div class="wrap">
+    <span class="eyebrow">Contato</span>
+    <h2 id="t-cont">Vamos criar algo <em>extraordinário</em></h2>
+    <div class="row">
+      <a class="btn fill" href="mailto:rvnegocioss@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>rvnegocioss@gmail.com</a>
+      <a class="btn" href="https://wa.me/5534996775156"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp (34) 99677-5156</a>
+      <a class="btn" href="https://www.linkedin.com/in/rafaeloliveiraimob/"><svg class="ico" aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
+    </div>
   </div>
-  <div class="eyebrow grp">Personagens animados</div>
-  <div class="g c3 center">
-    <article class="case"><div class="frame f34 contain"><video src="Petinho-animacao-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Criação de personagens animados</h3><p>Workflow automatizado de postagens com consistência de personagem: voz clonada por TTS, animação por modelo de vídeo (LTX 2.3) e sincronia labial (InfiniteTalk), orquestrados em workflows de ComfyUI.</p><div class="origin">ComfyUI · LTX 2.3 · InfiniteTalk · TTS clonado</div></div></article>
-    <article class="case"><div class="frame f34 contain"><video src="criacao-influencer-comfyui.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Julinha com o produto</h3><p>Composição de imagem com o produto real do cliente, animada com InfiniteTalk (lip-sync) e identidade do personagem travada por imagem de referência.</p><div class="origin">ComfyUI · InfiniteTalk · TTS clonado</div></div></article>
-  </div>
-  <div class="eyebrow grp">Franquia</div>
-  <div class="g c3 center">
-    <article class="case"><div class="frame f34 contain"><video src="cacau-franquia-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Conteúdo para franquia</h3><p>Vídeo promocional produzido para um cliente do setor de franquias.</p></div></article>
-    <article class="case"><div class="frame f34 contain"><video src="cacau-show-podcastclisente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Podcast de franquia</h3><p>Vídeo de divulgação de podcast, produzido para cliente.</p></div></article>
-  </div>
-  <div class="eyebrow grp">Imobiliário</div>
-  <div class="g c3 center">
-    <article class="case"><div class="frame f34 contain"><video src="virginia-venda-terreno-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Imobiliário</span><h3>Venda de terreno</h3><p>Edição automatizada com Remotion, um editor de vídeo programático (React) controlado por IA: clipes numerados viram Stories com legenda, card e trilha.</p><div class="origin">Remotion · React · vídeo programático · Whisper</div></div></article>
-    <article class="case"><div class="frame f34 contain"><video src="virginia-cliente.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Cliente</span><h3>Vídeo institucional</h3><p>Vídeo produzido para cliente do mercado imobiliário.</p></div></article>
-  </div>
-
-  <div class="head sub"><div><span class="eyebrow">Série família</span><h2>Cenas geradas com IA</h2></div><p>Gerado com IA (Hailuo/MiniMax) a partir de prompt meu.</p></div>
-  <div class="g c3 center">
-    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-01.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 1</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
-    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-02.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 2</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
-    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-03.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 3</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
-    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-04.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 4</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
-    <article class="case"><div class="frame f219 contain"><video src="video-ia-familia-sem-marca/video-ia-familia-05.mp4#t=0.6" controls muted preload="metadata"></video></div><div class="body"><span class="tag">Série família</span><h3>Cena 5</h3><div class="origin">Hailuo/MiniMax · prompt meu</div></div></article>
-  </div>
-</div></section>
-
-<section class="alt" id="imagens"><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Imagens com IA</span><h2 style="margin-top:14px">Direção <em class="gold">visual</em></h2></div>
-    <p>Personagens e cenas criados por mim com IA.</p>
-  </div>
-  <div class="g c3 center">
-    <article class="case"><div class="frame f34 cover"><img src="influencer_batom_loira_v1.png" alt="Ana, imagem base" loading="lazy"></div><div class="body"><span class="tag">Personagem</span><h3>Ana, imagem base</h3><p>Referência fixa do personagem, criada com IA.</p><div class="origin">ComfyUI · identidade travada</div></div></article>
-    <article class="case"><div class="frame f34 cover"><img src="criacao-influencer-comfyui.png" alt="Ana com o produto" loading="lazy"></div><div class="body"><span class="tag">Personagem</span><h3>Ana com o produto</h3><p>Do rosto de referência à pose final, mantendo a identidade.</p><div class="origin">ComfyUI · Qwen Image Edit</div></div></article>
-  </div>
-  <div class="g c3" style="margin-top:26px">
-    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-01.png" alt="Luz e movimento" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Luz e movimento</h3><p>Cena criada do zero com IA, com foco em luz, textura e profundidade.</p><div class="origin">ComfyUI</div></div></article>
-    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-02.png" alt="Retrato com luz natural" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Retrato com luz natural</h3><p>Retrato realista criado com IA, com iluminação natural e detalhe de pele e tecido.</p><div class="origin">ComfyUI</div></div></article>
-    <article class="case"><div class="frame f169 cover"><img src="imagens-cenas/cena-03.png" alt="Pôr do sol na varanda" loading="lazy"></div><div class="body"><span class="tag">Cena</span><h3>Pôr do sol na varanda</h3><p>Cena de fim de tarde criada com IA, com contraluz e profundidade de campo.</p><div class="origin">ComfyUI</div></div></article>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="head">
-    <div><span class="eyebrow">Certificações</span><h2 style="margin-top:14px">Credenciais <em class="gold">verificáveis</em></h2></div>
-    <p>Emitidas pelo Google Skillshop e pela Anthropic Academy, todas na minha carteira digital.</p>
-  </div>
-  <div class="pillars" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr))">
-    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 30/09/2026</div><h3>Google Ads Search</h3><p>Certificação em campanhas na Rede de Pesquisa.</p></div>
-    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 21/09/2026</div><h3>AI-Powered Performance Ads</h3><p>Campanhas de performance com IA no Google Ads.</p></div>
-    <div class="pillar"><div class="origin" style="margin:0 0 10px">Google Skillshop · 21/09/2026</div><h3>Campaign Manager 360</h3><p>Gestão e mensuração de campanhas de display.</p></div>
-    <div class="pillar"><div class="origin" style="margin:0 0 10px">Anthropic Academy · 17/09/2026</div><h3>Claude 101</h3><p>Fundamentos do Claude. Somam 9 cursos concluídos na Academy, entre eles Claude Code, MCP e AI Fluency.</p></div>
-  </div>
-  <div class="certs" style="margin-top:34px;align-items:center">
-    <a class="btn fill" href="https://skillshop.credential.net/profile/rafaelabrao/wallet" target="_blank" rel="noopener">Ver minha wallet de certificados</a>
-  </div>
-</div></section>
-
-<section class="contact" id="contato"><div class="wrap">
-  <span class="eyebrow">Contato</span>
-  <h2>Vamos criar algo <em>extraordinário</em></h2>
-  <div class="rule" style="margin:0 auto"></div>
-  <div class="links">
-    <a class="btn fill" href="mailto:rvnegocioss@gmail.com">rvnegocioss@gmail.com</a>
-    <a class="btn" href="https://wa.me/5534996775156">WhatsApp (34) 99677-5156</a>
-    <a class="btn" href="https://www.linkedin.com/in/rafaeloliveiraimob/">LinkedIn</a>
-  </div>
-</div></section>
+</section>
+</main>
 
 <footer>© Rafael Oliveira Abrão · Uberlândia, MG</footer>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Mídia ampliada"><button type="button" aria-label="Fechar">&times;</button><img alt=""><video controls playsinline></video></div>
+
 <script>
 (function(){
-  var lb=document.getElementById('lb'), im=lb.querySelector('img'), vd=lb.querySelector('video');
-  function close(){lb.classList.remove('on','isvid');im.removeAttribute('src');vd.pause();vd.removeAttribute('src');vd.load();}
-  document.querySelectorAll('.frame img').forEach(function(el){
-    el.addEventListener('click',function(){im.src=el.currentSrc||el.src;im.alt=el.alt;lb.classList.remove('isvid');lb.classList.add('on');});
+  var q=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+  if(/[?&]revisao=1/.test(location.search)){document.body.classList.add('revisao');}
+
+  /* menu mobile */
+  var mb=document.querySelector('.menu-btn'),pn=document.getElementById('panel');
+  function menu(open){pn.classList.toggle('open',open);mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');}
+  mb.addEventListener('click',function(){menu(mb.getAttribute('aria-expanded')!=='true');});
+  q('a',pn).forEach(function(a){a.addEventListener('click',function(){menu(false);});});
+
+  /* lightbox */
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),vd=lb.querySelector('video'),cb=lb.querySelector('button'),last=null;
+  function open(trigger){last=trigger;lb.classList.add('on');cb.focus();}
+  function close(){if(!lb.classList.contains('on'))return;lb.classList.remove('on','isvid');im.removeAttribute('src');vd.pause();vd.removeAttribute('src');vd.load();if(last)last.focus();}
+  q('[data-zoom]').forEach(function(f){
+    var isv=f.getAttribute('data-zoom')==='video',card=f.closest('.card'),h=card&&card.querySelector('h3'),pic=f.querySelector('img');
+    f.tabIndex=0;f.setAttribute('role','button');
+    f.setAttribute('aria-label',(isv?'Reproduzir vídeo: ':'Ampliar imagem: ')+(isv?(h?h.textContent:''):(pic?pic.alt:'')));
+    function act(){
+      if(isv){vd.src=f.querySelector('video').getAttribute('src');vd.muted=false;lb.classList.add('on','isvid');open(f);var p=vd.play();if(p&&p.catch)p.catch(function(){});}
+      else{im.src=pic.currentSrc||pic.src;im.alt=pic.alt;lb.classList.remove('isvid');open(f);}
+    }
+    f.addEventListener('click',act);
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();act();}});
   });
-  document.querySelectorAll('.frame video').forEach(function(el){
-    el.removeAttribute('controls'); el.muted=true; el.parentNode.classList.add('hasvid');
-    el.parentNode.addEventListener('click',function(){
-      vd.src=el.getAttribute('src').split('#')[0]; vd.muted=false; lb.classList.add('on','isvid');
-      var pr=vd.play(); if(pr&&pr.catch){pr.catch(function(){});}
-    });
+  lb.addEventListener('click',function(e){if(e.target!==vd)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();menu(false);}});
+
+  /* carrosséis: setas, arrastar, estado */
+  q('.track').forEach(function(t){
+    var band=t.previousElementSibling&&t.previousElementSibling.querySelector('.arrows')?t.previousElementSibling:null;
+    var arrows=band?q('.arr',band):[];
+    function upd(){var max=t.scrollWidth-t.clientWidth-2;if(arrows[0])arrows[0].disabled=t.scrollLeft<=2;if(arrows[1])arrows[1].disabled=t.scrollLeft>=max;}
+    arrows.forEach(function(b){b.addEventListener('click',function(){t.scrollBy({left:(+b.getAttribute('data-dir'))*Math.max(260,t.clientWidth*.8),behavior:'smooth'});});});
+    t.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+    var down=false,moved=false,sx=0,sl=0;
+    t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0)return;down=true;moved=false;sx=e.clientX;sl=t.scrollLeft;});
+    window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(!moved&&Math.abs(dx)>5){moved=true;t.classList.add('drag');}if(moved)t.scrollLeft=sl-dx;});
+    window.addEventListener('pointerup',function(){if(!down)return;down=false;t.classList.remove('drag');});
+    t.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+    t.addEventListener('dragstart',function(e){e.preventDefault();});
   });
-  lb.addEventListener('click',function(e){ if(e.target!==vd) close(); });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 })();
 </script>
 </body>
