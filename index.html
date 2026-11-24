@@ -70,7 +70,7 @@ h2 em{font-style:normal;color:var(--accent)}
 .cv-pendente{display:none}
 
 /* HERO */
-.hero{padding:40px 0 48px}
+.hero{padding:32px 0 36px}
 .hero .wrap{display:grid;gap:40px;align-items:center}
 .hero h1{font-size:clamp(36px,5vw,56px);letter-spacing:-.02em;line-height:1.05;margin:12px 0 16px}
 .lead{font-size:20px;color:var(--ink-2);max-width:560px}
@@ -79,10 +79,10 @@ h2 em{font-style:normal;color:var(--accent)}
 .stats b{font:600 25px var(--fh);color:var(--ink);margin-right:4px}
 .tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:16px}
 .tools li{font-size:13px;font-weight:500;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2)}
-.photo{position:relative;justify-self:start;width:min(100%,360px);padding:0 10px 10px 0}
+.photo{position:relative;justify-self:start;width:min(100%,240px);padding:0 10px 10px 0}
 .photo::before{content:"";position:absolute;top:10px;left:10px;right:0;bottom:0;border:2px solid var(--accent);border-radius:20px}
 .photo img{position:relative;width:100%;height:auto;aspect-ratio:1;border-radius:20px;background:var(--print)}
-@media(min-width:860px){.hero{padding:64px 0}.hero .wrap{grid-template-columns:1.25fr .75fr;gap:64px}.photo{justify-self:end;width:min(100%,400px)}}
+@media(min-width:860px){.hero{padding:64px 0}.hero .wrap{grid-template-columns:1.6fr .4fr;gap:48px}.photo{justify-self:end;width:min(100%,260px)}}
 
 /* SECOES / FAIXAS */
 .band,.sec{padding:40px 0;border-top:1px solid var(--line)}
@@ -185,6 +185,40 @@ footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-si
 .lb.isvid{cursor:default}
 .lb button{position:absolute;top:12px;right:16px;width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
 .lb button:focus-visible{outline-color:#fff}
+/* SEM CARROSSEL: grade fixa, nada rola pro lado */
+.arrows{display:none!important}
+.track{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;overflow:visible;scroll-snap-type:none;max-width:1120px;margin:0 auto;padding:4px 20px 0;cursor:auto;align-items:start}
+.track .card,.track .card.tall,.track .card.wide,.track .card.ph{flex:none;width:auto}
+.track{grid-template-columns:repeat(2,1fr);gap:14px}
+.track .card.big,.track .card.w2{grid-column:auto}
+.track .card .body{padding:12px 14px 14px}
+.track .card h3{font-size:15px;margin:2px 0 6px}
+.track .card p{font-size:12px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.track .card p+p,.track .card ul.pts{display:none}
+@media(min-width:760px){#design .track,#trafego .track,#motion .track{grid-template-columns:repeat(4,1fr)}#automacoes .track{grid-template-columns:repeat(4,1fr)}#imagens .track{grid-template-columns:repeat(5,1fr)}}
+
+/* LUXO: serifa de display, ouro discreto, ritmo regular */
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-500.ttf) format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-600.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}
+:root{--bg:#FBF9F4;--ink:#15130F;--ink-2:#3B372F;--muted:#6B665B;--line:#E6E0D2;--accent:#8F6F26;--accent-soft:#F4EEDF;--fh:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+h1,h2,h3,.logo{font-family:var(--fh);font-weight:600;letter-spacing:0}
+.hero h1{font-size:clamp(46px,6vw,76px);font-weight:500;letter-spacing:-.01em;line-height:1}
+.lead{font-size:19px;line-height:1.65;color:var(--ink-2)}
+.sec-head h2,.band-head h2{font-size:clamp(34px,4vw,48px);font-weight:500;line-height:1.05}
+.sec-head h2::after,.band-head h2::after{content:"";display:block;width:48px;height:1px;background:var(--accent);margin-top:16px}
+h2 em{font-style:normal;color:var(--accent)}
+.card h3,.fcard h3,.cert h3,.steps li h3{font-size:24px;font-weight:600;line-height:1.15}
+.band,.sec{padding:72px 0}
+.hero{padding:56px 0 64px}
+.card,.fcard,.cert,.steps li,.photo img{border-radius:4px}
+.photo::before{border-radius:4px;border-width:1px}
+.btn{border-radius:2px}
+.tools li{border-radius:2px;background:transparent;font-weight:400}
+.steps li::before{font:500 30px var(--fh)}
+.card,.fcard,.cert,.steps li{box-shadow:none;border-color:var(--line)}
+.fcard:hover,.card:hover{border-color:var(--accent)}
+.sec-head p,.band-head p{font-size:16px;line-height:1.7;max-width:560px}
+.wrap,.track{max-width:1120px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -207,7 +241,7 @@ footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-si
     <a href="#topo" class="logo" aria-label="Rafael Abrão, início">R. Abrão</a>
     <ul class="links">
       <li><a href="#destaques">Trabalhos</a></li>
-      <li><a href="#design">Design</a></li>
+      <li><a href="#design">Design</a></li><li><a href="#motion">Motion</a></li>
       <li><a href="#certificacoes">Certificações</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -232,11 +266,6 @@ footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-si
         <a class="btn fill" href="#destaques">Ver trabalhos</a>
         <a class="btn cv-pendente" href="curriculo-rafael-abrao.pdf" download><svg class="ico" aria-hidden="true"><use href="#i-dl"/></svg>Baixar currículo</a>
       </div>
-      <ul class="stats">
-        <li><b>9</b>cursos Anthropic Academy</li>
-        <li><b>3</b>certificações Google Skillshop</li>
-        <li>workflow de vídeo com <b>46</b> nós</li>
-      </ul>
       <ul class="tools" aria-label="Ferramentas">
         <li>Claude Code</li><li>MCP</li><li>n8n</li><li>Python</li><li>ComfyUI</li><li>Meta Ads</li><li>Google Ads</li><li>Remotion</li>
       </ul>
@@ -252,7 +281,7 @@ footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-si
 
 <section class="sec" id="destaques" aria-labelledby="t-dest">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Destaques</span><h2 id="t-dest">Três trabalhos <em>para começar</em></h2></div></div>
+    <div class="sec-head"><div><h2 id="t-dest">Destaques</h2></div></div>
     <div class="feat">
       <a class="fcard" href="#rvbot"><span class="tag">Criado por mim</span><h3>RVbot Extension</h3><p>Qualquer plataforma SaaS, por comando de voz. Extensão de Chrome (Manifest V3) com agente de IA.</p><span class="go">Ver o case <svg class="ico" aria-hidden="true"><use href="#i-go"/></svg></span></a>
       <a class="fcard" href="#comfyui"><span class="tag">Desenvolvido por mim</span><h3>Pipelines ComfyUI</h3><p>Workflows de IA generativa reprodutíveis, com processamento em lote e identidade de personagem travada. Estrutura real de 46 nós.</p><span class="go">Ver o case <svg class="ico" aria-hidden="true"><use href="#i-go"/></svg></span></a>
@@ -280,6 +309,30 @@ footer{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-si
   </div>
 </section>
 
+<section class="band" id="motion" aria-labelledby="t-motion">
+  <div class="wrap">
+    <div class="band-head">
+      <div><h2 id="t-motion">Motion feito <em>com IA</em></h2><p>Vídeos verticais criados por mim com IA e motion graphics. Clique pra assistir.</p></div>
+    </div>
+  </div>
+  <div class="track" role="region" aria-label="Motion feito com IA">
+    <article class="card"><div class="frame r916" data-zoom="video"><video src="videos/video19-imovel-documento-chave-3d.mp4#t=0.6" preload="metadata" muted playsinline></video></div><div class="body"><span class="tag">Motion · Imobiliário</span><h3>Passo 1: a matrícula</h3><p>Explica o primeiro passo da compra de um imóvel, em motion.</p></div></article>
+    <article class="card"><div class="frame r916" data-zoom="video"><video src="videos/video20-pit-stop-automacao-3d.mp4#t=0.6" preload="metadata" muted playsinline></video></div><div class="body"><span class="tag">Motion · Automação</span><h3>Pit stop da automação</h3><p>Automação explicada com a metáfora do pit stop.</p></div></article>
+    <article class="card"><div class="frame r916" data-zoom="video"><video src="videos/video21-trailer-do-anuncio-3d.mp4#t=0.6" preload="metadata" muted playsinline></video></div><div class="body"><span class="tag">Motion · Anúncios</span><h3>O começo é o trailer</h3><p>Como o anúncio funciona como trailer do produto.</p></div></article>
+    <article class="card"><div class="frame r916" data-zoom="video"><video src="videos/motion-virginia-v4.mp4#t=0.6" preload="metadata" muted playsinline></video></div><div class="body"><span class="tag">Feito para um cliente</span><h3>Vídeo imobiliário</h3><p>Produzi para um cliente do setor imobiliário, em motion.</p></div></article>
+  </div>
+</section>
+<section class="sec" id="motion-dominio" aria-labelledby="t-md">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Por trás do motion</span><h2 id="t-md">O que eu <em>domino</em></h2><p>Remotion · HyperFrames · integrações com IA · etc.</p></div></div>
+    <ol class="steps">
+      <li><h3>Roteiro e direção</h3><p>Defino a história, o ritmo e a mensagem de cada vídeo.</p></li>
+      <li><h3>Motion em código</h3><p>Animações programadas, com o mesmo padrão de qualidade em todo vídeo.</p></li>
+      <li><h3>Integrações com IA</h3><p>IA generativa ligada ao fluxo de produção, com personagem consistente.</p></li>
+      <li><h3>Automático, em escala</h3><p>Vertical 9:16 e pronto pra postagem em escala, de forma automática.</p></li>
+    </ol>
+  </div>
+</section>
 <section class="band alt" id="automacoes" aria-labelledby="t-aut">
   <div class="wrap">
     <div class="band-head">
